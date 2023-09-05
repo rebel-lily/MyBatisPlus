@@ -19,6 +19,7 @@ import java.util.List;
 @SpringBootTest
 public class MyBatisPlusService {
     @Autowired
+    //自动注入
     private UserService userService;
 
     @Test
