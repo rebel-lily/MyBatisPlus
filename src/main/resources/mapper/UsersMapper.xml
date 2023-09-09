@@ -8,5 +8,10 @@
     <select id="selectMapById" resultType="map">
         select id,name,password from users where id = #{id}
     </select>
+
+<!--Page<Users> selectPageVo(@Param("page")Page<Users> page,,@Param("sex")String sex;-->
+    <select id="selectPageVo" resultType="Users">
+        select uid,user_name,password,sex from t_user where sex = #{sex}
+    </select>
 </mapper>
 

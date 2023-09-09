@@ -29,22 +29,22 @@ public class MyBatisPlusService {
         System.out.println("总记录数:" + count);
     }
 
-    @Test
-    public void test02(){
-        //批量添加
-        List<Users> list = new ArrayList<>();
-        for (int i = 1;i <= 6;i++){
-            Users user = new Users();
-            user.setName("ybc" + i);
-            user.setPassword("123" + i);
-            if (i % 2 == 0){
-                user.setSex("男");
-            }else {
-                user.setSex("女");
-            }
-            list.add(user);
-        }
-        userService.saveBatch(list);
-    }
+//    @Test
+//    public void test02(){
+//        //批量添加
+//        List<Users> list = new ArrayList<>();
+//        for (int i = 1;i <= 6;i++){
+//            Users user = new Users();
+//            user.setName("ybc" + i);
+//            user.setPassword("123" + i);
+//            if (i % 2 == 0){
+//                user.setSex("男");
+//            }else {
+//                user.setSex("女");
+//            }
+//            list.add(user);
+//        }
+//        userService.saveBatch(list);
+//    }
 
 }

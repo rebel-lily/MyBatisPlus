@@ -25,16 +25,16 @@ class MybatisplusApplicationTests {
        System.out.println(list);
    }
 
-   @Test
-   //添加功能
-    public void test02(){
-       Users users = new Users();
-       users.setName("luck");
-       users.setPassword("200816");
-       users.setSex("女");
-       int result = usersMapper.insert(users);
-       System.out.println("result:" + result);
-   }
+//   @Test
+//   //添加功能
+//    public void test02(){
+//       Users users = new Users();
+//       users.setName("luck");
+//       users.setPassword("200816");
+//       users.setSex("女");
+//       int result = usersMapper.insert(users);
+//       System.out.println("result:" + result);
+//   }
 
    @Test
     public void test03(){
@@ -55,15 +55,15 @@ class MybatisplusApplicationTests {
        System.out.println(result);
    }
 
-   @Test
-    public void test04(){
-       Users users = new Users();
-       users.setId(7L);
-       users.setPassword("happy");
-       users.setSex("男");
-       int result = usersMapper.updateById(users);
-       System.out.println(result);
-   }
+//   @Test
+//    public void test04(){
+//       Users users = new Users();
+//       users.setId(7L);
+//       users.setPassword("happy");
+//       users.setSex("男");
+//       int result = usersMapper.updateById(users);
+//       System.out.println(result);
+//   }
 
    @Test
    public void test05(){

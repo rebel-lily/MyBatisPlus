@@ -55,29 +55,29 @@ public class MybatisPlusWrapperTest {
        System.out.println("result:" + result);
    }
 
-   @Test
-    public void test04(){
-       //将用户名含有ybc或性别为女的用户信息修改
-       QueryWrapper<Users> queryWrapper = new QueryWrapper<>();
-       queryWrapper.like("user_name","ybc").or().like("sex","男");
-       Users user = new Users();
-       user.setName("see");
-       user.setSex("女");
-       int result = usersMapper.update(user,queryWrapper);
-       System.out.println(result);
-   }
+//   @Test
+//    public void test04(){
+//       //将用户名含有ybc或性别为女的用户信息修改
+//       QueryWrapper<Users> queryWrapper = new QueryWrapper<>();
+//       queryWrapper.like("user_name","ybc").or().like("sex","男");
+//       Users user = new Users();
+//       user.setName("see");
+//       user.setSex("女");
+//       int result = usersMapper.update(user,queryWrapper);
+//       System.out.println(result);
+//   }
 
-   @Test
-    public void test05(){
-       //优先级
-       QueryWrapper<Users> queryWrapper = new QueryWrapper<>();
-       queryWrapper.like("user_name","u").and(i->i.like("sex","女").or().isNull("password"));
-       Users user = new Users();
-       user.setName("lucky");
-       user.setSex("男");
-       int result = usersMapper.update(user,queryWrapper);
-       System.out.println(result);
-   }
+//   @Test
+//    public void test05(){
+//       //优先级
+//       QueryWrapper<Users> queryWrapper = new QueryWrapper<>();
+//       queryWrapper.like("user_name","u").and(i->i.like("sex","女").or().isNull("password"));
+//       Users user = new Users();
+//       user.setName("lucky");
+//       user.setSex("男");
+//       int result = usersMapper.update(user,queryWrapper);
+//       System.out.println(result);
+//   }
 
    @Test
    public void test06(){

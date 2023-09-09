@@ -1,6 +1,7 @@
 package com.sqc.mybatisplus.pojo;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.sqc.mybatisplus.enums.sexEnum;
 import lombok.Data;
 
 /**
@@ -20,7 +21,7 @@ public class Users {
    @TableField("user_name")
    private String name;
    private String password;
-   private String sex;
+   private sexEnum sex;
    //逻辑删除注解
    @TableLogic
    private String isDelete;

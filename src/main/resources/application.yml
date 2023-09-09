@@ -1,16 +1,28 @@
+server:
+  port: 80
+
+#yml配置文件要严格按照书写规范，否则会报错
 spring:
+  #配置数据源
   datasource:
+    #配置数据源类型
     type: com.zaxxer.hikari.HikariDataSource
+    #配置连接数据库的信息
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/hello?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
     username: root
     password: 200816
-    mybatis-plus:
-      configuration:
-        log-impl: org.apache.ibatis.logging.stdout.stdOutImpl
-#        #设置MyBatis全局配置
-        global-config:
-          db_config:
-#            table-prefix: t_
-          id-type: auto
+
+#MyBatis-Plus相关配置
+mybatis-plus:
+  configuration:
+    #配置日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      # 设置实体类所对应的表的统一前缀
+      table-prefix: t_
+  type-aliases-package: com.sqc.mybatisplus.pojo
+  #扫描通用枚举的包
+  type-enums-package: com.sqc.mybatisplus.enums
 
