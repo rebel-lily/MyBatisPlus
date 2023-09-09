@@ -1,5 +1,6 @@
 package com.sqc.mybatisplus;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.sqc.mybatisplus.mapper.UsersMapper;
@@ -116,7 +117,17 @@ public class MybatisPlusWrapperTest {
               .like(StringUtils.isNotBlank(password),"password",password);
       List<Users> list = usersMapper.selectList(queryWrapper);
       list.forEach(System.out::println);
+   }
 
-
+   @Test
+   public void test10(){
+      //使用lambda后要用函数式接口，例如Users::getName
+      String username = "a";
+      String password = "123";
+      LambdaQueryWrapper<Users> queryWrapper = new LambdaQueryWrapper<>();
+      queryWrapper.like(StringUtils.isNotBlank(username),Users::getName,username)
+              .like(StringUtils.isNotBlank(password),Users::getPassword,password);
+      List<Users> list = usersMapper.selectList(queryWrapper);
+      list.forEach(System.out::println);
    }
 }
